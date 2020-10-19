@@ -14,6 +14,7 @@ namespace PersonDataManagement
             CheckoingForTeenagerPerson(listPersonInCity);
             GetAverageAge(listPersonInCity);
             CheckForSpecificName(listPersonInCity);
+            GetMoreThanSixty(listPersonInCity);
             Console.ReadKey();
         }
         private static void AddRecords(List<Person> listPersonInCity)
@@ -62,6 +63,13 @@ namespace PersonDataManagement
             else
             {
                 Console.WriteLine(name + " is not present");
+            }
+        }
+        private static void GetMoreThanSixty(List<Person> listPersonInCity)
+        {
+            foreach (Person person in listPersonInCity.FindAll(e => e.Age > 60))
+            {
+                    Console.WriteLine("Name: " + person.Name + "\t Age: " + person.Age);
             }
         }
     }
